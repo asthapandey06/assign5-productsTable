@@ -1,0 +1,5 @@
+table th,td{
+    border-bottom: 2px solid rgb(59, 136, 167);
+    text-align: center;
+    width: 30%;
+}
