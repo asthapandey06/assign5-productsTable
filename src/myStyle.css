@@ -1,5 +1,51 @@
+
+.wrapper{
+    width:100%;
+    background-color: aliceblue;
+    padding: 5%;
+}
+
+#content{
+    margin: auto;
+    width: 60%;
+    background-color: rgb(190, 235, 243);
+    font-size: 30px;
+    padding: 2%;
+    box-shadow: 3px 3px 4px black;
+    border-radius: 3px;
+}
+.label{
+    margin: 2%;
+}
+
+.input{
+    width: 90%;
+}
+
+.labelbutton button{
+    width: 50%;
+    font-size: 30px;
+    margin:0 30%;
+    background-color: white;
+    border: 2px solid white;
+    padding: 1%;
+    color:black;
+    font-weight: 700;
+}
+
+#output{
+    padding: 5%;
+}
+
+#output table{
+    background-color: rgb(173, 218, 236);
+    padding: 2%;
+    margin:auto;
+    font-size: 20px;
+}
+
 table th,td{
-    border-bottom: 2px solid rgb(59, 136, 167);
+    border-bottom: 2px solid rgb(170, 224, 245);
     text-align: center;
     width: 30%;
 }
