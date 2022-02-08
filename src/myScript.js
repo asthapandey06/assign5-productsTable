@@ -67,7 +67,8 @@ function display() {
             <td>${prodArray[i].id}</td>
             <td>${prodArray[i].name}</td>
             <td>${prodArray[i].price}</td>
-            <td><a href ="#" onclick="dataEdit('${prodArray[i].id}')">Edit</a></td>
+            <td><a href ="#" onclick="dataEdit('${prodArray[i].id}')">Edit</a> |
+            <a href ="#" onclick="deleteProd('${prodArray[i].id}')">Delete</a></td>
             </tr>`;
         }
         document.getElementById("output").innerHTML = `<table>
@@ -75,6 +76,7 @@ function display() {
             <th>Product ID</th>
             <th>Product Name</th>
             <th>Product Price</th>
+            <th>Edit/Delete</th>
         </tr>
         ${result}
         </table>`;
@@ -105,10 +107,20 @@ function getData(id) {
 function updateProdArr(id) {
     for (let i = 0; i < prodArray.length; i++) {
         if (prodArray[i].id == id) {
-            //prodArray[i].id = document.getElementById("prodId").value;
             prodArray[i].name = document.getElementById("prodName").value;
             prodArray[i].price = document.getElementById("prodPrice").value;
         }
+       
     }
     display();
+}
+function deleteProd(id){
+    for (let i =0; i<prodArray.length; i++){
+        if (prodArray[i].id == id){
+            prodArray.splice(i, 1);
+            display();
+            break;
+        }
+    }
+    
 }
