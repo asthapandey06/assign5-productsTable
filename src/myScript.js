@@ -87,7 +87,9 @@ function dataEdit(id) {
     document.getElementById("prodName").value = prodArr.name;
     document.getElementById("prodPrice").value = prodArr.price;
     document.getElementById("updateProdBtn").style = "display:block";
-    document.getElementById("updateProdBtn").setAttribute("onclick", `updateProdArr(${id})`)
+    document.getElementById("updateProdBtn").setAttribute("onclick", `updateProdArr(${id})`);
+    document.getElementById("addProdBtn").style = "display:none";
+    document.getElementById("prodId").setAttribute("disabled",'disabled');
 
 }
 //fetch product id
@@ -103,7 +105,7 @@ function getData(id) {
 function updateProdArr(id) {
     for (let i = 0; i < prodArray.length; i++) {
         if (prodArray[i].id == id) {
-            prodArray[i].id = document.getElementById("prodId").value;
+            //prodArray[i].id = document.getElementById("prodId").value;
             prodArray[i].name = document.getElementById("prodName").value;
             prodArray[i].price = document.getElementById("prodPrice").value;
         }
