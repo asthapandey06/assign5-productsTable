@@ -1,5 +1,4 @@
 let prodArray = [];
-
 function addProd() {
     let pid = document.getElementById("prodId").value;
     let pname = document.getElementById("prodName").value;
@@ -11,9 +10,8 @@ function addProd() {
     }
 
 }
-
-
 function checkData(pid, pname, pprice) {
+    //check valid values entered
     if (pid == "" || isNaN(pid)) {
         alert("Enter correct ID");
         document.getElementById("prodId").focus();
@@ -31,56 +29,39 @@ function checkData(pid, pname, pprice) {
     }
 
 }
-
-
-function dataInsert(pid, pname, pprice) {  
-            prodArray.push({
-                "id": pid,
-                "name": pname,
-                "price": pprice
-            });
+function dataInsert(pid, pname, pprice) {
+    //insert elements in array
+    prodArray.push({
+        "id": pid,
+        "name": pname,
+        "price": pprice
+    });
 }
-function checkUnique(pid, pname, pprice){
-    if (prodArray.length == 0){
+function checkUnique(pid, pname, pprice) {
+    //check id is unique or not
+    if (prodArray.length == 0) {
         dataInsert(pid, pname, pprice);
         return;
     }
-    else{
-    for(let i=0; i<prodArray.length; i++)
-        {
-            if(prodArray[i].id== pid)
-            {
+    else {
+        for (let i = 0; i < prodArray.length; i++) {
+            if (prodArray[i].id == pid) {
                 alert("ID already exist");
                 return;
-            }            
+            }
         }
         dataInsert(pid, pname, pprice);
     }
 }
-
-function dataEdit(){
-    if (prodArray.includes(pid)){
-        var prodArray = getData(pid);
-        document.getElementById("prodId").value = prodId;
-        document.getElementById("addProdBtn").style.display="block"
-    }
-}
-
-function getData(pid){
-    for(let i =0; i= prodArray.length;i++){
-
-    }
-}
-
-
+//display in table format
 function display() {
     let result = "";
 
     if (prodArray.length === 0) {
-        document.getElementById("output").innerHTML = "<p>No values</p>";
+        document.getElementById("output").innerHTML = "<p>No record found</p>";
     }
     else {
-        
+
         for (let i = 0; i < prodArray.length; i++) {
             result += `<tr>
             <td>${prodArray[i].id}</td>
@@ -97,7 +78,35 @@ function display() {
         </tr>
         ${result}
         </table>`;
-       
-
     }
+}
+//edit data
+function dataEdit(id) {
+    var prodArr = getData(id);
+    document.getElementById("prodId").value = prodArr.id;
+    document.getElementById("prodName").value = prodArr.name;
+    document.getElementById("prodPrice").value = prodArr.price;
+    document.getElementById("updateProdBtn").style = "display:block";
+    document.getElementById("updateProdBtn").setAttribute("onclick", `updateProdArr(${id})`)
+
+}
+//fetch product id
+function getData(id) {
+    {
+        for (let i = 0; i < prodArray.length; i++) {
+            if (prodArray[i].id == id) {
+                return prodArray[i];
+            }
+        }
+    }
+}
+function updateProdArr(id) {
+    for (let i = 0; i < prodArray.length; i++) {
+        if (prodArray[i].id == id) {
+            prodArray[i].id = document.getElementById("prodId").value;
+            prodArray[i].name = document.getElementById("prodName").value;
+            prodArray[i].price = document.getElementById("prodPrice").value;
+        }
+    }
+    display();
 }
