@@ -8,7 +8,6 @@
 #content{
     margin: auto;
     width: 60%;
-    
     font-size: 30px;
     padding: 2%;
     box-shadow: 3px 3px 4px black;
@@ -42,8 +41,8 @@
 }
 
 #output table{
-    background-color: rgb(173, 218, 236);
-    padding: 2%;
+    background-color: rgb(242, 251, 255);
+    padding: 3%;
     margin:auto;
     font-size: 20px;
 }

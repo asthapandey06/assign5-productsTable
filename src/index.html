@@ -15,23 +15,25 @@
         <div id="header"></div>
         <div id="main">
             <form>
-            <div id="content">
-                
+                <div id="content">
+
                     <div class="label"><label for="prodId">Product Id:</label></div>
                     <div class="input"><input type="text" name="prodId" id="prodId"><br><br></div>
                     <div class="label"><label for="prodName">Product Name:</label></div>
                     <div class="input"><input type="text" name="prodName" id="prodName"><br><br></div>
                     <div class="label"><label for="prodPrice">Product Price:</label></div>
                     <div class="input"><input type="text" name="prodPrice" id="prodPrice"><br><br></div>
-                    <div class="labelbutton"><button type="button" onclick="addProd()">Add Product</button></div>
-            </div>
-            </form>  
-                <div id="output">
+                    <div class="labelbutton"><button type="button" id ="addProdBtn" onclick="addProd()" >Add Product</button></div>
+                    <div class="labelbutton"><button type="button" id ="updateProdBtn"onclick="dataEdit()" hidden>Update Product</button></div>
                 </div>
+            </form>
+            <div id="output">
+
             </div>
-            
         </div>
-    
+
+    </div>
+
     </div>
 </body>
 
